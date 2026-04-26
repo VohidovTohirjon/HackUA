@@ -1,6 +1,6 @@
 export const patients = [
   {
-    id: "maria-lopez",
+    id: "p001",
     name: "Maria Lopez",
     age: 58,
     condition: "Diabetes",
@@ -22,7 +22,7 @@ export const patients = [
     language: "English"
   },
   {
-    id: "james-carter",
+    id: "p002",
     name: "James Carter",
     age: 67,
     condition: "COPD",
@@ -44,7 +44,7 @@ export const patients = [
     language: "English"
   },
   {
-    id: "elena-ruiz",
+    id: "p003",
     name: "Elena Ruiz",
     age: 72,
     condition: "Heart disease",
@@ -66,7 +66,7 @@ export const patients = [
     language: "Spanish support preferred"
   },
   {
-    id: "robert-wilson",
+    id: "p004",
     name: "Robert Wilson",
     age: 61,
     condition: "Diabetes",
@@ -87,7 +87,7 @@ export const patients = [
     language: "English"
   },
   {
-    id: "ana-martinez",
+    id: "p005",
     name: "Ana Martinez",
     age: 34,
     condition: "Asthma",

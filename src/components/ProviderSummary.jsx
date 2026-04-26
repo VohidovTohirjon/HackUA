@@ -2,15 +2,15 @@ import { Copy, ShieldAlert, Stethoscope } from "lucide-react";
 import { useState } from "react";
 import { Card } from "./Card";
 
-export default function ProviderSummary({ patient }) {
+export default function ProviderSummary({ patient, demoActive }) {
   const [copied, setCopied] = useState(false);
   const summary =
-    patient.id === "maria-lopez"
+    patient.id === "p001"
       ? "Maria missed her last diabetes follow-up because of transportation. She reports high blood sugar this week. She prefers phone communication and wants help arranging care. Nurse review is recommended."
       : `${patient.name} is managing ${patient.condition.toLowerCase()}. Reported barrier: ${patient.mainBarrier}. Suggested human review: ${patient.suggestedAction}`;
 
   return (
-    <Card className="p-6">
+    <Card className={`p-6 ${demoActive ? "demo-highlight" : ""}`}>
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-care-blue">

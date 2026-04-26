@@ -6,3 +6,6 @@ dist/
 *.log
 ~$*
 *.docx
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

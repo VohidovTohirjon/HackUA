@@ -11,7 +11,7 @@ function matchesFilter(patient, filter) {
   return patient.barriers.includes(filter);
 }
 
-export default function Dashboard({ patients, selectedPatient, setSelectedPatient, filter, setFilter }) {
+export default function Dashboard({ patients, selectedPatient, setSelectedPatient, filter, setFilter, demoActive }) {
   const sorted = [...patients]
     .filter((patient) => matchesFilter(patient, filter))
     .sort((a, b) => riskRank[a.risk] - riskRank[b.risk]);
@@ -33,7 +33,7 @@ export default function Dashboard({ patients, selectedPatient, setSelectedPatien
   ];
 
   return (
-    <section id="dashboard" className="border-y border-slate-200 bg-white py-16">
+    <section id="dashboard" className={`border-y border-slate-200 bg-white py-16 ${demoActive ? "demo-highlight" : ""}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Care Team Dashboard"

@@ -1,10 +1,11 @@
 import { AlertTriangle, BrainCircuit, Gauge, ShieldCheck, UserCheck } from "lucide-react";
 import { Badge, RiskBadge } from "./Badge";
 import { Card } from "./Card";
+import ClinicalSafetyBoundary from "./ClinicalSafetyBoundary";
 
-function InfoBlock({ title, children }) {
+function InfoBlock({ title, children, highlight = false }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+    <div className={`rounded-xl border border-slate-200 bg-slate-50 p-4 ${highlight ? "demo-pulse" : ""}`}>
       <p className="text-sm font-black text-care-navy">{title}</p>
       <div className="mt-2 text-sm leading-6 text-slate-600">{children}</div>
     </div>
@@ -19,7 +20,12 @@ export default function AIAnalysisPanel({ analysis, highlight = false }) {
           <p className="text-sm font-black uppercase tracking-[0.14em] text-care-cyan">AI Analysis Panel</p>
           <h3 className="mt-2 text-2xl font-black text-care-navy">Care coordination output</h3>
         </div>
-        <RiskBadge risk={analysis.riskLevel} />
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge tone={analysis.source === "llm" ? "green" : "amber"}>
+            Review mode: {analysis.source === "llm" ? "AI-assisted" : analysis.source === "draft preview" ? "draft preview" : "safe rules"}
+          </Badge>
+          <RiskBadge risk={analysis.riskLevel} />
+        </div>
       </div>
 
       <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -50,7 +56,7 @@ export default function AIAnalysisPanel({ analysis, highlight = false }) {
             {analysis.healthConcerns.map((item) => <Badge key={item} tone={item === "None detected" ? "green" : "amber"}>{item}</Badge>)}
           </div>
         </InfoBlock>
-        <InfoBlock title="Why it was flagged">{analysis.reason}</InfoBlock>
+        <InfoBlock title="Why it was flagged" highlight={highlight}>{analysis.reason}</InfoBlock>
         <InfoBlock title="Recommended human role">{analysis.recommendedRole}</InfoBlock>
       </div>
 
@@ -79,6 +85,7 @@ export default function AIAnalysisPanel({ analysis, highlight = false }) {
         <p className="text-sm font-black text-care-blue">Suggested next action</p>
         <p className="mt-2 text-sm leading-6 text-slate-700">{analysis.suggestedAction}</p>
       </div>
+      <ClinicalSafetyBoundary />
       <div className="mt-4 rounded-xl border border-emerald-100 bg-emerald-50 p-4">
         <p className="text-sm font-black text-emerald-700">Patient-friendly reply</p>
         <p className="mt-2 text-sm leading-6 text-slate-700">{analysis.patientReply}</p>

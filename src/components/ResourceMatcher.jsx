@@ -15,7 +15,7 @@ export default function ResourceMatcher({ barriers }) {
         </div>
         <div>
           <p className="text-sm font-black text-care-navy">Demo resource matcher</p>
-          <p className="text-xs text-slate-500">Fake resources for prototype judging only</p>
+          <p className="text-xs text-slate-500">Synthetic resource options for care coordination</p>
         </div>
       </div>
       <div className="mt-4 space-y-2">

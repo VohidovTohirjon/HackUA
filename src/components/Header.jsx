@@ -11,7 +11,7 @@ export default function Header() {
           CareBridge AI
         </a>
         <nav className="hidden items-center gap-5 text-sm font-bold text-slate-600 lg:flex">
-          <a className="hover:text-care-blue" href="#prize">Prize Fit</a>
+          <a className="hover:text-care-blue" href="#top">Overview</a>
           <a className="hover:text-care-blue" href="#checkin">Simulator</a>
           <a className="hover:text-care-blue" href="#dashboard">Dashboard</a>
           <a className="hover:text-care-blue" href="#metrics">Metrics</a>
