@@ -134,6 +134,7 @@ export default function StudentView({
               key={rule.name}
               type="button"
               onClick={() => setSelectedRule(rule)}
+              aria-pressed={selectedRule.name === rule.name}
               className={`focus-ring rounded-full px-4 py-2 text-sm font-black transition active:scale-[0.99] ${
                 selectedRule.name === rule.name
                   ? 'bg-ua-red text-white shadow-sm'
@@ -183,6 +184,7 @@ export default function StudentView({
                       key={course.code}
                       type="button"
                       onClick={() => onSelectCourse(course)}
+                      aria-label={`Show details for ${course.code} ${course.name}`}
                       className="focus-ring w-full rounded-md bg-white p-3 text-left shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99]"
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -284,41 +286,6 @@ function RuleDetail({ label, value, highlight = false }) {
   );
 }
 
-function WhyThisMattersCard({ children }) {
-  return (
-    <section className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-slate-200/70 sm:p-6">
-      <p className="text-sm font-black uppercase tracking-wide text-ua-red">Why this matters</p>
-      <p className="mt-2 max-w-4xl text-base font-semibold leading-7 text-slate-700">{children}</p>
-    </section>
-  );
-}
-
-function BeforeAfterCard({ label, title, items, tone }) {
-  const isAfter = tone === 'after';
-
-  return (
-    <article className={`rounded-lg p-5 shadow-soft ring-1 ${isAfter ? 'bg-white ring-emerald-200' : 'bg-white ring-red-200'}`}>
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <p className={`text-sm font-black uppercase tracking-wide ${isAfter ? 'text-emerald-700' : 'text-ua-red'}`}>{label}</p>
-          <h2 className="mt-1 text-xl font-black text-ua-navy">{title}</h2>
-        </div>
-        <div className={`rounded-full p-2 ${isAfter ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-ua-red'}`}>
-          {isAfter ? <CheckCircle2 className="h-5 w-5" aria-hidden="true" /> : <XCircle className="h-5 w-5" aria-hidden="true" />}
-        </div>
-      </div>
-      <div className="mt-4 space-y-3">
-        {items.map((item) => (
-          <div key={item} className="flex gap-3 text-sm text-slate-700">
-            <ArrowRight className={`mt-0.5 h-4 w-4 shrink-0 ${isAfter ? 'text-emerald-600' : 'text-ua-red'}`} aria-hidden="true" />
-            <span>{item}</span>
-          </div>
-        ))}
-      </div>
-    </article>
-  );
-}
-
 function WhatChangedFeature() {
   return (
     <section className="overflow-hidden rounded-lg bg-white shadow-soft ring-1 ring-slate-200/70">
@@ -366,15 +333,6 @@ function ChangeColumn({ title, tone, items }) {
           </div>
         ))}
       </div>
-    </div>
-  );
-}
-
-function CreditStat({ label, value }) {
-  return (
-    <div className="rounded-md bg-slate-50 p-3">
-      <p className="text-xs font-bold uppercase text-slate-500">{label} credits</p>
-      <p className="mt-1 text-2xl font-black text-slate-950">{value}</p>
     </div>
   );
 }

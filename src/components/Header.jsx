@@ -14,9 +14,14 @@ export default function Header() {
             <p className="text-sm text-slate-600">Graduation Risk Detection Before It Becomes Graduation Delay</p>
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-bold text-ua-navy ring-1 ring-slate-200">
-          <AlertTriangle className="h-5 w-5 text-ua-red" aria-hidden="true" />
-          From hidden risk to visible action
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-bold text-ua-navy ring-1 ring-slate-200">
+            <AlertTriangle className="h-5 w-5 text-ua-red" aria-hidden="true" />
+            From hidden risk to visible action
+          </div>
+          <div className="rounded-lg bg-red-50 px-3 py-2 text-xs font-black uppercase tracking-wide text-ua-red ring-1 ring-red-100">
+            Demo data for hackathon prototype
+          </div>
         </div>
       </div>
     </header>
