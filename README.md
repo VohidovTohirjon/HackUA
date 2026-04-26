@@ -59,3 +59,14 @@ This prototype uses mock data only. It does not use real student records or real
 5. Open Advisor View and show the alert/intervention queue.
 6. Open Admin View and show system blockers.
 7. Open Demo Story and explain iteration.
+
+## Live Demo Script
+
+1. Start Demo Mode.
+2. Show Sofia's story.
+3. Click Check My Graduation Risk.
+4. Explain the rescue route.
+5. Click Send to Advisor.
+6. Open Advisor View and generate outreach draft.
+7. Open Admin View and show system blockers.
+8. Open Demo Story and close with the final line.

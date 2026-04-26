@@ -21,8 +21,9 @@ export default function AdminView({ exportSuccess, onExportReport }) {
           <button
             type="button"
             onClick={onExportReport}
-            className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white px-4 py-2.5 text-sm font-black text-ua-navy shadow-sm transition hover:bg-slate-100 active:scale-[0.99]"
+            className="focus-ring relative inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-white px-4 py-2.5 text-sm font-black text-ua-navy shadow-sm ring-4 ring-white/20 transition hover:bg-slate-100 active:scale-[0.99]"
           >
+            <span className="absolute -top-3 right-2 rounded-full bg-ua-red px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-white">Demo action</span>
             <Download className="h-4 w-4" aria-hidden="true" />
             Export Report
           </button>
@@ -31,7 +32,7 @@ export default function AdminView({ exportSuccess, onExportReport }) {
           <div className="mt-5 flex items-start gap-3 rounded-lg bg-white/10 px-4 py-3 text-sm text-white ring-1 ring-white/20">
             <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-200" aria-hidden="true" />
             <div>
-              <p className="font-black">Leadership report exported for demo review.</p>
+              <p className="font-black">Mock leadership report prepared. Demo data only.</p>
               <p className="mt-1 text-blue-50">Includes course bottlenecks, advising coverage, and completion-plan risk.</p>
             </div>
           </div>
@@ -73,7 +74,7 @@ export default function AdminView({ exportSuccess, onExportReport }) {
           The same CSC 245 issue that appears in Sofia’s plan also appears across 289 students, which is how BearPath turns one student story into leadership action.
         </p>
         <div className="mt-5 grid gap-3 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] lg:items-center">
-          {['Student risk detected', 'Advisor alert', 'Repeated pattern', 'Leadership action'].map((step, index) => (
+          {['Sofia risk detected', 'Advisor alert', 'CSC 245 pattern identified', 'Leadership adds support/section'].map((step, index) => (
             <div key={step} className="contents">
               <div className="rounded-lg bg-slate-50 p-4 text-center ring-1 ring-slate-200">
                 <span className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-ua-navy text-sm font-black text-white">{index + 1}</span>

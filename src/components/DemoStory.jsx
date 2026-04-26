@@ -24,20 +24,18 @@ const storySections = [
 ];
 
 const demoFlow = [
-  'Student sees Sofia’s story',
-  'Graduation GPS finds hidden risk',
-  'Hidden Rule Explainer teaches the rule',
-  'Rescue Plan gives next steps',
-  'Advisor receives alert',
-  'Admin sees system blockers',
+  'Student confusion',
+  'Hidden risk detected',
+  'Rescue route created',
+  'Advisor intervention',
+  'System blocker visibility',
 ];
 
 const iterationSteps = [
-  { label: 'Started with', value: 'degree planning is confusing' },
-  { label: 'Built first', value: 'three role-based views' },
-  { label: 'Learned', value: 'dashboards are not enough' },
-  { label: 'Iterated into', value: 'Graduation GPS + hidden-rule explainer + rescue route' },
-  { label: 'Final version', value: 'student confusion becomes visible action' },
+  { label: 'Started with', value: 'role-based dashboards' },
+  { label: 'Realized', value: 'dashboards alone did not explain the student pain' },
+  { label: 'Iterated into', value: 'Graduation GPS + Hidden Rules Explainer + Rescue Plan' },
+  { label: 'Final result', value: 'hidden degree rules become visible action' },
 ];
 
 const nextSteps = [
@@ -108,9 +106,9 @@ export default function DemoStory() {
       <section className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-slate-200/70 sm:p-6">
         <div className="flex items-center gap-3">
           <Route className="h-6 w-6 text-ua-red" aria-hidden="true" />
-          <h2 className="text-xl font-black text-ua-navy">Working prototype demo flow</h2>
+          <h2 className="text-xl font-black text-ua-navy">3-minute demo path</h2>
         </div>
-        <div className="mt-5 grid gap-3 md:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-5 grid gap-3 md:grid-cols-5">
           {demoFlow.map((step, index) => (
             <div key={step} className="rounded-lg bg-slate-50 p-4 ring-1 ring-slate-200">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ua-navy text-sm font-black text-white">{index + 1}</span>
@@ -123,9 +121,9 @@ export default function DemoStory() {
       <section className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-slate-200/70 sm:p-6">
         <div className="flex items-center gap-3">
           <GitBranch className="h-6 w-6 text-ua-red" aria-hidden="true" />
-          <h2 className="text-xl font-black text-ua-navy">Vibe Coding / Iteration</h2>
+          <h2 className="text-xl font-black text-ua-navy">What changed during our iteration</h2>
         </div>
-        <div className="mt-5 grid gap-3 lg:grid-cols-5">
+        <div className="mt-5 grid gap-3 lg:grid-cols-4">
           {iterationSteps.map((step, index) => (
             <div key={step.label} className="rounded-lg bg-slate-50 p-4 ring-1 ring-slate-200">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ua-red text-sm font-black text-white">{index + 1}</span>
@@ -134,6 +132,14 @@ export default function DemoStory() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-slate-200/70 sm:p-6">
+        <p className="text-sm font-black uppercase tracking-wide text-ua-red">Why BearPath is creative</p>
+        <p className="mt-3 max-w-4xl text-base font-bold leading-7 text-slate-700">
+          BearPath connects the student’s personal plan, advisor intervention, and university-level blockers in one loop. It does not just show data;
+          it turns confusion into action.
+        </p>
       </section>
 
       <section className="rounded-lg bg-white p-5 shadow-soft ring-1 ring-slate-200/70 sm:p-6">

@@ -32,8 +32,9 @@ export default function AdvisorView({ activeFilter, onFilterChange, outreachOpen
           <button
             type="button"
             onClick={onOpenOutreach}
-            className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ua-red px-4 py-2.5 text-sm font-black text-white shadow-sm transition hover:bg-red-800 active:scale-[0.99]"
+            className="focus-ring relative inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ua-red px-4 py-2.5 text-sm font-black text-white shadow-sm ring-4 ring-red-100 transition hover:bg-red-800 active:scale-[0.99]"
           >
+            <span className="absolute -top-3 right-2 rounded-full bg-white px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-ua-red ring-1 ring-red-100">Demo action</span>
             <MailOpen className="h-4 w-4" aria-hidden="true" />
             Generate Outreach Draft
           </button>
@@ -44,7 +45,7 @@ export default function AdvisorView({ activeFilter, onFilterChange, outreachOpen
             <div>
               <p className="font-black">Outreach draft ready</p>
               <p className="mt-1">
-                Hi Sofia, BearPath flagged a possible graduation delay caused by a credit gap and CSC 245 prerequisite timing. Let&apos;s meet
+                Hi Sofia, BearPath flagged a possible graduation delay caused by a 7-credit gap and CSC 245 prerequisite timing. Let&apos;s meet
                 before registration to adjust your plan.
               </p>
             </div>
@@ -64,7 +65,9 @@ export default function AdvisorView({ activeFilter, onFilterChange, outreachOpen
               <BellRing className="h-4 w-4" aria-hidden="true" />
               New BearPath Alert
             </div>
-              <h2 className="mt-3 text-xl font-black text-ua-navy">New BearPath Alerts</h2>
+              <h2 className="mt-3 text-xl font-black text-ua-navy">
+                {advisorAlert ? 'New BearPath Alert: Sofia Martinez may avoid a 1-semester delay with advisor review.' : 'New BearPath Alerts'}
+              </h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
               {advisorAlert
                 ? 'Sofia sent a risk summary from the Student View. The same hidden-risk details are now ready for advisor intervention.'
@@ -83,13 +86,22 @@ export default function AdvisorView({ activeFilter, onFilterChange, outreachOpen
               </div>
               <div className="mt-4 grid gap-3">
                 <AlertDetail label="Risk level" value={advisorAlert.riskLevel} />
+                <AlertDetail label="Credit gap" value="7-credit gap" />
+                <AlertDetail label="Prerequisite chain" value="CSC 245 → CSC 335" />
                 <AlertDetail label="Potential delay avoided" value={advisorAlert.potentialDelayAvoided} />
-                <AlertDetail label="Hidden risk" value={advisorAlert.hiddenRisk} />
               </div>
             </div>
             <div className="grid gap-3">
               <AlertDetail label="Recommended advisor action" value={advisorAlert.recommendedAdvisorAction} />
               <AlertDetail label="Suggested meeting topic" value={advisorAlert.suggestedMeetingTopic} />
+              <button
+                type="button"
+                onClick={onOpenOutreach}
+                className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ua-red px-4 py-2.5 text-sm font-black text-white shadow-sm transition hover:bg-red-800 active:scale-[0.99]"
+              >
+                <MailOpen className="h-4 w-4" aria-hidden="true" />
+                Generate Outreach Draft
+              </button>
               <div className="rounded-lg bg-red-50 p-4 ring-1 ring-red-100">
                 <p className="text-xs font-black uppercase tracking-wide text-ua-red">Why this reduces guesswork</p>
                 <p className="mt-2 text-sm font-bold leading-6 text-red-900">

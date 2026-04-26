@@ -32,16 +32,18 @@ export default function GraduationRiskCard({ showAnalysis, onCheckRisk, onSendAd
         <button
           type="button"
           onClick={onCheckRisk}
-          className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ua-red px-4 py-2.5 text-sm font-black text-white shadow-sm transition hover:bg-red-800 active:scale-[0.99]"
+          className="focus-ring relative inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ua-red px-4 py-2.5 text-sm font-black text-white shadow-sm ring-4 ring-red-100 transition hover:bg-red-800 active:scale-[0.99]"
         >
+          <span className="absolute -top-3 right-2 rounded-full bg-white px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-ua-red ring-1 ring-red-100">Demo action</span>
           <ShieldCheck className="h-4 w-4" aria-hidden="true" />
           Check My Graduation Risk
         </button>
         <button
           type="button"
           onClick={onSendAdvisor}
-          className="focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ua-navy px-4 py-2.5 text-sm font-black text-white shadow-sm transition hover:bg-slate-900 active:scale-[0.99]"
+          className="focus-ring relative inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-ua-navy px-4 py-2.5 text-sm font-black text-white shadow-sm ring-4 ring-blue-100 transition hover:bg-slate-900 active:scale-[0.99]"
         >
+          <span className="absolute -top-3 right-2 rounded-full bg-white px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-ua-navy ring-1 ring-blue-100">Demo action</span>
           <Send className="h-4 w-4" aria-hidden="true" />
           Send to Advisor
         </button>
@@ -55,9 +57,10 @@ export default function GraduationRiskCard({ showAnalysis, onCheckRisk, onSendAd
         </button>
       </div>
       {showAnalysis ? (
-        <p className="mt-4 rounded-lg bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700 ring-1 ring-slate-200">
-          Demo moment: hidden rules become a concrete route, then the advisor gets the same summary.
-        </p>
+        <div className="mt-4 rounded-lg bg-emerald-50 px-4 py-3 text-sm text-emerald-800 ring-1 ring-emerald-200">
+          <p className="font-black">Risk checked: 4 hidden issues found. Potential delay avoided: 1 semester.</p>
+          <p className="mt-1 font-semibold text-emerald-700">Demo moment: hidden rules become a concrete route, then the advisor gets the same summary.</p>
+        </div>
       ) : null}
 
       {sendSuccess ? (
@@ -66,7 +69,7 @@ export default function GraduationRiskCard({ showAnalysis, onCheckRisk, onSendAd
             <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
             <div>
               <p className="font-black">Advisor alert created for Dr. Elena Reyes.</p>
-              <p className="mt-1 font-semibold text-emerald-700">Sofia&apos;s credit gap and CSC 245 prerequisite timing are now visible in Advisor View.</p>
+              <p className="mt-1 font-semibold text-emerald-700">Open Advisor View to see it.</p>
             </div>
           </div>
           {advisorAlert ? <AdvisorSummaryCard alert={advisorAlert} /> : null}
