@@ -1,0 +1,111 @@
+export const patients = [
+  {
+    id: "maria-lopez",
+    name: "Maria Lopez",
+    age: 58,
+    condition: "Diabetes",
+    risk: "High",
+    riskScore: 86,
+    mainBarrier: "Transportation + high blood sugar",
+    barriers: ["Transportation", "Appointment"],
+    ruralContext: "Lives 42 miles from clinic and relies on family rides.",
+    preferredContact: "Phone call, SMS backup",
+    lastCheckIn:
+      "I missed my appointment because I could not get a ride, and my blood sugar has been high this week.",
+    aiSummary:
+      "Missed diabetes follow-up because of transportation and reports high blood sugar this week.",
+    suggestedAction:
+      "Contact within 24 hours, offer ride or phone visit, and route glucose concern to nurse.",
+    reportedConcern: "High blood sugar",
+    riskHistory: ["Low", "Medium", "High"],
+    location: "Nogales, AZ",
+    language: "English"
+  },
+  {
+    id: "james-carter",
+    name: "James Carter",
+    age: 67,
+    condition: "COPD",
+    risk: "High",
+    riskScore: 92,
+    mainBarrier: "Worsening breathing + no broadband",
+    barriers: ["Broadband", "Appointment"],
+    ruralContext: "Home broadband is unreliable; nearest pulmonary clinic is over an hour away.",
+    preferredContact: "Voice call",
+    lastCheckIn:
+      "My breathing is worse today and I could not do the video visit because my internet does not work at home.",
+    aiSummary:
+      "Reports worsening breathing and cannot complete video visits because home internet is unreliable.",
+    suggestedAction:
+      "Escalate for nurse review today and offer a phone-based care option.",
+    reportedConcern: "Breathing concern",
+    riskHistory: ["Medium", "Medium", "High"],
+    location: "Ajo, AZ",
+    language: "English"
+  },
+  {
+    id: "elena-ruiz",
+    name: "Elena Ruiz",
+    age: 72,
+    condition: "Heart disease",
+    risk: "Medium",
+    riskScore: 58,
+    mainBarrier: "Medication refill confusion",
+    barriers: ["Medication"],
+    ruralContext: "Uses a small local pharmacy and prefers simple call instructions.",
+    preferredContact: "SMS first, phone if needed",
+    lastCheckIn:
+      "I am confused about my refill and do not know if the pharmacy has my heart medicine ready.",
+    aiSummary:
+      "Unsure whether refill is ready and needs help understanding pharmacy next steps.",
+    suggestedAction:
+      "CHW call to confirm medication access and coordinate pharmacy follow-up.",
+    reportedConcern: "Medication access confusion",
+    riskHistory: ["Low", "Low", "Medium"],
+    location: "Sahuarita, AZ",
+    language: "Spanish support preferred"
+  },
+  {
+    id: "robert-wilson",
+    name: "Robert Wilson",
+    age: 61,
+    condition: "Diabetes",
+    risk: "Low",
+    riskScore: 18,
+    mainBarrier: "Stable this week",
+    barriers: [],
+    ruralContext: "Uses SMS and has a scheduled clinic visit next month.",
+    preferredContact: "SMS",
+    lastCheckIn:
+      "I am okay this week, taking my medicine, and I have no issue getting to my next visit.",
+    aiSummary:
+      "Reports no new barriers, has medication, and is planning to attend next visit.",
+    suggestedAction: "Send encouragement and continue weekly check-ins.",
+    reportedConcern: "None reported",
+    riskHistory: ["Low", "Low", "Low"],
+    location: "Willcox, AZ",
+    language: "English"
+  },
+  {
+    id: "ana-martinez",
+    name: "Ana Martinez",
+    age: 34,
+    condition: "Asthma",
+    risk: "Medium",
+    riskScore: 58,
+    mainBarrier: "Missed telehealth visit due to internet access",
+    barriers: ["Broadband", "Appointment"],
+    ruralContext: "Cell coverage is inconsistent; works best with asynchronous SMS.",
+    preferredContact: "Spanish SMS",
+    lastCheckIn:
+      "I missed my telehealth appointment because the wifi dropped and the video would not load.",
+    aiSummary:
+      "Missed telehealth appointment because Wi-Fi dropped and needs a low-bandwidth alternative.",
+    suggestedAction:
+      "Offer phone visit rescheduling and document broadband barrier for care plan.",
+    reportedConcern: "No symptom escalation reported",
+    riskHistory: ["Low", "Medium", "Medium"],
+    location: "San Manuel, AZ",
+    language: "Spanish"
+  }
+];
