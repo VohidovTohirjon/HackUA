@@ -2,7 +2,7 @@
 
 **Project:** CareBridge AI  
 **Track:** Social Innovation - Rural Healthcare Access  
-**Prize:** Best Use of AI for Public Good
+**Prize category entered:** Best Use of AI for Public Good
 
 ## What it is
 
